@@ -6,4 +6,4 @@ const questionSchema = new Schema({
   author: { type: String, required: true },
 })
 
-module.exports = model('Questions', questionSchema)
+module.exports = model('Question', questionSchema)

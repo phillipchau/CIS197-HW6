@@ -10,6 +10,7 @@ router.get('/questions', (req, res, next) => {
       next(new Error('Data not found'))
     } else {
       res.send('questions gathered')
+      console.log(data)
     }
   })
 })
