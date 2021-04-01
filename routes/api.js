@@ -3,14 +3,12 @@ const Question = require('../models/question')
 const isAuthenticated = require('../middlewares/isAuthenticated')
 
 const router = express.Router()
-
 router.get('/questions', (req, res, next) => {
   Question.find({}, (err, data) => {
     if (err) {
       next(new Error('Data not found'))
     } else {
       res.send('questions gathered')
-      console.log(data)
     }
   })
 })

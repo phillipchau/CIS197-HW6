@@ -23,10 +23,12 @@ router.post('/login', (req, res, next) => {
   User.findOne({ username, password }, (err, user) => {
     if (err) {
       next(new Error('Failed to Login'))
-    } else {
+    } else if (user) {
       req.session.username = username
       req.session.password = password
       res.send('logged in')
+    } else {
+      next(new Error('Login not valid'))
     }
   })
 })
