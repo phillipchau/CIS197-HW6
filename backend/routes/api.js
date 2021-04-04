@@ -8,7 +8,7 @@ router.get('/questions', (req, res, next) => {
     if (err) {
       next(new Error('Data not found'))
     } else {
-      res.send('questions gathered')
+      res.send(data)
     }
   })
 })

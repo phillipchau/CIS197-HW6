@@ -39,4 +39,8 @@ router.post('/logout', isAuthenticated, (req, res) => {
   res.send('user logged out')
 })
 
+router.get('/logstatus', (req, res) => {
+  res.send({ user: req.session.username })
+})
+
 module.exports = router
