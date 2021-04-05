@@ -8,12 +8,11 @@ const Login = () => {
   const [password, setPassword] = useState('')
   const history = useHistory()
   const login = async () => {
-    const { status } = await axios.post('/account/login', { username, password })
-    if (status === 200) {
-      console.log('user logged in')
+    try {
+      await axios.post('/account/login', { username, password })
       history.push('/')
-    } else {
-      alert('An error occured while signing up')
+    } catch (err) {
+      alert('An error occured while logging in')
     }
   }
   return (

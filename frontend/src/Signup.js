@@ -10,7 +10,6 @@ const Signup = () => {
   const signup = async () => {
     const { status } = await axios.post('/account/signup', { username, password })
     if (status === 200) {
-      console.log('user signed up')
       history.push('/')
     } else {
       alert('An error occured while signing up')

@@ -12,10 +12,6 @@ import Home from './Home'
 import './App.css'
 
 const App = () => {
-  const [username, setUsername] = useState('')
-  const [password, setPassword] = useState('')
-  const [msg, setMsg] = useState('')
-  const [data, setData] = useState('')
 
   return (
     <>
